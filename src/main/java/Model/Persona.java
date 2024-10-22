@@ -91,6 +91,6 @@ public class Persona {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(nombre, apellidos, edad);
+        return Objects.hash( apellidos, edad);
     }
 }
