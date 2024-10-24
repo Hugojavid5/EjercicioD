@@ -9,14 +9,17 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * La clase HelloApplication es la aplicación principal que inicia la interfaz gráfica de usuario (GUI).
- * Extiende la clase Application de JavaFX.
+ * Clase principal de la aplicación JavaFX.
+ * Esta clase se encarga de inicializar y mostrar la ventana principal de la aplicación,
+ * cargando el archivo FXML correspondiente a la interfaz de usuario.
  */
 public class HelloApplication extends Application {
 
     /**
-     * El método start es el punto de entrada de la aplicación.
-     * @param stage El escenario principal donde se mostrará la escena.
+     * Método que se llama al iniciar la aplicación.
+     * Carga el archivo FXML, establece la escena y muestra la ventana.
+     *
+     * @param stage El escenario principal de la aplicación.
      * @throws IOException Si ocurre un error al cargar el archivo FXML.
      */
     @Override
@@ -33,8 +36,10 @@ public class HelloApplication extends Application {
     }
 
     /**
-     * El método main es el punto de entrada de la aplicación.
-     * @param args Argumentos de la línea de comandos.
+     * Método principal de la aplicación.
+     * Inicia la ejecución de la aplicación JavaFX.
+     *
+     * @param args Argumentos de línea de comandos.
      */
     public static void main(String[] args) {
         launch();
