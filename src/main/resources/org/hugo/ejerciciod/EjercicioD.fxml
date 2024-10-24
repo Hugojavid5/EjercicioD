@@ -11,7 +11,7 @@
    <children>
       <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
          <children>
-            <TableView id="table_view" fx:id="tablaPersonas" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#cargarDatos" prefHeight="316.0" prefWidth="543.0" VBox.vgrow="ALWAYS">
+            <TableView id="table_view" fx:id="tablaPersonas" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="316.0" prefWidth="543.0" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="c_Nombre" minWidth="-1.0" prefWidth="147.0" text="NOMBRE" />
                 <TableColumn fx:id="c_apellidos" minWidth="-1.0" prefWidth="162.0" text="APELLIDOS" />
@@ -21,7 +21,7 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Button id="btt_agregarPersona" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"  text="Agregar Persona" />
+            <Button id="btt_agregarPersona" fx:id="btt_agregar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#agregar" text="Agregar Persona" />
          </children>
          <opaqueInsets>
             <Insets />
