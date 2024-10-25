@@ -15,10 +15,9 @@ import java.io.IOException;
  */
 public class HelloApplication extends Application {
 
-    /**
+    /*
      * Método que se llama al iniciar la aplicación.
      * Carga el archivo FXML, establece la escena y muestra la ventana.
-     *
      * @param stage El escenario principal de la aplicación.
      * @throws IOException Si ocurre un error al cargar el archivo FXML.
      */
@@ -38,7 +37,6 @@ public class HelloApplication extends Application {
     /**
      * Método principal de la aplicación.
      * Inicia la ejecución de la aplicación JavaFX.
-     *
      * @param args Argumentos de línea de comandos.
      */
     public static void main(String[] args) {
