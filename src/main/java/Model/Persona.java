@@ -6,7 +6,7 @@ import java.util.Objects;
  * Clase que representa una persona con nombre, apellidos y edad.
  * Esta clase incluye métodos para obtener y establecer los atributos
  * de la persona, así como métodos para comparar instancias de
- * personas por sus atributos.
+ * personas por sus atributos
  */
 public class Persona {
 
