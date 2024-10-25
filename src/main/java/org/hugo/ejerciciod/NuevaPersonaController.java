@@ -17,15 +17,15 @@ public class NuevaPersonaController {
 
     /** Campo de texto para introducir los apellidos de la persona. */
     @FXML
-    private TextField txtApellidos;
+    private TextField txt_Apellidos;
 
     /** Campo de texto para introducir la edad de la persona. */
     @FXML
-    private TextField txtEdad;
+    private TextField txt_Edad;
 
     /** Campo de texto para introducir el nombre de la persona. */
     @FXML
-    private TextField txtNombre;
+    private TextField txt_Nombre;
 
     /** Referencia a la tabla de personas en la ventana principal. */
     private TableView<Persona> tablaPersonas;
@@ -33,7 +33,6 @@ public class NuevaPersonaController {
     /**
      * Establece la referencia de la tabla de personas para que este controlador
      * pueda añadir personas directamente a la tabla.
-     *
      * @param tablaPersonas La tabla que contiene la lista de personas.
      */
     public void setTablaPersonas(TableView<Persona> tablaPersonas) {
@@ -44,7 +43,6 @@ public class NuevaPersonaController {
      * Acción que se ejecuta cuando el usuario hace clic en el botón "Guardar".
      * Valida los datos introducidos, muestra un mensaje de error si es necesario
      * y añade la nueva persona a la tabla si los datos son válidos.
-     *
      * @param event El evento que desencadenó la acción.
      */
     @FXML
@@ -52,17 +50,17 @@ public class NuevaPersonaController {
         String error = "";
 
         // Validación de los campos de entrada
-        if (txtNombre.getText().isEmpty()) {
+        if (txt_Nombre.getText().isEmpty()) {
             error += "Introduce un Nombre\n";
         }
-        if (txtApellidos.getText().isEmpty()) {
+        if (txt_Apellidos.getText().isEmpty()) {
             error += "Introduce un Apellido\n";
         }
-        if (txtEdad.getText().isEmpty()) {
+        if (txt_Edad.getText().isEmpty()) {
             error += "Introduce una Edad\n";
         } else {
             try {
-                int edad = Integer.parseInt(txtEdad.getText());
+                int edad = Integer.parseInt(txt_Edad.getText());
                 if (edad <= 0) {
                     throw new Exception();
                 }
@@ -76,8 +74,7 @@ public class NuevaPersonaController {
         // Verificación de errores y adición de la persona a la tabla
         if (error.isEmpty()) {
             boolean existe = false;
-            Persona p = new Persona(txtNombre.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()));
-
+            Persona p = new Persona(txt_Nombre.getText(), txt_Apellidos.getText(), Integer.parseInt(txt_Edad.getText()));
             // Verifica si la persona ya existe en la tabla
             for (Persona persona : tablaPersonas.getItems()) {
                 if (persona.equals(p)) {
@@ -92,7 +89,7 @@ public class NuevaPersonaController {
                 tablaPersonas.refresh();
                 mostrarInfo("Persona añadida correctamente");
 
-                Stage stage = (Stage) txtNombre.getScene().getWindow();
+                Stage stage = (Stage) txt_Nombre.getScene().getWindow();
                 stage.close();
             }
         } else {
@@ -103,21 +100,16 @@ public class NuevaPersonaController {
     /**
      * Acción que se ejecuta cuando el usuario hace clic en el botón "Cancelar".
      * Cierra la ventana sin añadir ninguna persona a la tabla.
-     *
      * @param event El evento que desencadenó la acción.
      */
     @FXML
     void cancelar(ActionEvent event) {
-        // Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        // Esta línea funciona si no existen componentes en la ventana.
-
-        Stage stage = (Stage) txtNombre.getScene().getWindow();
+        Stage stage = (Stage) txt_Nombre.getScene().getWindow();
         stage.close();
     }
 
     /**
      * Muestra un mensaje de error en forma de alerta.
-     *
      * @param error El mensaje de error a mostrar.
      */
     void mostrarError(String error) {
@@ -130,7 +122,6 @@ public class NuevaPersonaController {
 
     /**
      * Muestra un mensaje de información en forma de alerta.
-     *
      * @param info El mensaje de información a mostrar.
      */
     void mostrarInfo(String info) {
